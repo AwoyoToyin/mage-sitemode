@@ -12,7 +12,7 @@ Note: The templates can be scoped to a particular store view.
 By default, this module ships with the storefronts on live mode so you don't get undesired results.
 To put your storefronts in either maintenance or coming soon mode, goto: `Hatmeige -> Site Mode -> Settings` and you should be greeted with a view like this:
 
-![Alt text](media/sitemode/to/modes.png?raw=true "Mode Selection")
+![Alt text](media/sitemode/modes.png?raw=true "Mode Selection")
 
 ### live mode
 Click on the `Activate` button to set this mode for the current scope.
@@ -38,16 +38,16 @@ Display Subscribe Form: Should customers be allowed to subscribe to newsletter?
 Display Social Share Buttons: Should customers be shown the social links? Makes use of the links entered in the 'Social' group.
 ```
 
-![Alt text](media/sitemode/to/maintenance.png?raw=true "Maintenance Mode Group")
+![Alt text](media/sitemode/maintenance.png?raw=true "Maintenance Mode Group")
 
 #### maintenance mode activated
 When `Maintenance Layout 1` is selected as the `Page Layout`:
 
-![Alt text](media/sitemode/to/maintenance-mode.png?raw=true "Maintenance Mode")
+![Alt text](media/sitemode/maintenance-mode.png?raw=true "Maintenance Mode")
 
 When `Maintenance Layout 2` is selected as the `Page Layout`:
 
-![Alt text](media/sitemode/to/maintenance-mode-2.png?raw=true "Maintenance Mode")
+![Alt text](media/sitemode/maintenance-mode-2.png?raw=true "Maintenance Mode")
 
 
 ### coming soon mode / group configuration
@@ -69,15 +69,15 @@ Display Subscribe Form: Should customers be allowed to subscribe to newsletter?
 Display Social Share Buttons: Should customers be shown the social links? Makes use of the links entered in the 'Social' group.
 ```
 
-![Alt text](media/sitemode/to/coming.png?raw=true "Coming Soon Mode Group")
+![Alt text](media/sitemode/coming.png?raw=true "Coming Soon Mode Group")
 
 #### coming soon mode activated
 When `Coming Soon` is selected as the `Page Layout`:
 
-![Alt text](media/sitemode/to/coming-mode.png?raw=true "Coming Soon Mode")
+![Alt text](media/sitemode/coming-mode.png?raw=true "Coming Soon Mode")
 
 
 ### social group configuration
 If you choose to display social links in either maintenance or coming soon mode, you should enter links to your social accounts here.
 
-![Alt text](media/sitemode/to/social.png?raw=true "Social Group")
+![Alt text](media/sitemode/social.png?raw=true "Social Group")
