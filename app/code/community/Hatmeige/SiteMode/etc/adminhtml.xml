@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <menu>
+        <hatmeige module="sitemode">
+            <title>Hatmeige</title>
+            <sort_order>70</sort_order>
+            <children>
+                <sitemode translate="title" module="sitemode">
+                    <title>Site Mode</title>
+                    <sort_order>10</sort_order>
+                    <children>
+                        <template translate="title" module="sitemode">
+                            <title>Template</title>
+                            <action>adminhtml/template</action>
+                            <sort_order>10</sort_order>
+                        </template>
+                        <settings translate="title" module="sitemode">
+                            <title>Settings</title>
+                            <action>adminhtml/system_config/edit/section/sitemode</action>
+                            <sort_order>20</sort_order>
+                        </settings>
+                    </children>
+                </sitemode>
+            </children>
+        </hatmeige>
+    </menu>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <hatmeige>
+                        <children>
+                            <sitemode translate="title" module="sitemode">
+                                <title>Site Mode</title>
+                                <children>
+                                    <template translate="title" module="sitemode">
+                                        <title>Template</title>
+                                        <children>
+                                            <save translate="title">
+                                                <title>Save Template</title>
+                                                <sort_order>0</sort_order>
+                                            </save>
+                                            <delete translate="title">
+                                                <title>Delete Template</title>
+                                                <sort_order>10</sort_order>
+                                            </delete>
+                                        </children>
+                                    </template>
+                                </children>
+                            </sitemode>
+                        </children>
+                    </hatmeige>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <sitemode translate="title" module="sitemode">
+                                        <title>Site Mode</title>
+                                    </sitemode>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config> 

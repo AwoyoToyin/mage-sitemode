@@ -1,0 +1,45 @@
+.product_socials_wrapper_inner{margin-top:30px;}
+.small .product_socials_wrapper_inner{margin:0 0 30px 0;}
+.page-header, .page-wrapper .copyright {display:none !important;}
+.page-wrapper {
+    -webkit-filter: blur(14px) !important;
+    -moz-filter: blur(14px) !important;
+    -o-filter: blur(14px) !important;
+    -ms-filter: blur(14px) !important;
+    filter: blur(14px) !important;
+    -moz-transition: filter .3s ease-in-out !important;
+    -o-transition: filter .3s ease-in-out !important;
+    -webkit-transition: filter .3s ease-in-out !important;
+    transition: filter .3s ease-in-out !important;
+}
+
+.mb-time-countdown-container{display:table;width:100%;color:#000;}
+.product-timer{display:table-cell;width:100%;font-weight:normal;z-index:99;}
+.product-timer>div{float:left;width:24%;text-align:center;color:#000;display:block;padding:4px;position:relative;margin:0 4px 0 0;font-size:25px;}
+.small .product-timer>div{width:23% !important;padding:4px;position:relative;margin:0 4px 0 0;font-size:18px;}
+.product-timer>div:after{position:absolute;content:'|';right:0;top:50%;transform:translateY(-50%);-o-transform:translateY(-50%);-moz-transform:translateY(-50%);font-size:35px}
+.product-timer>div.second:after{display:none}
+.product-timer>div span.no{float:left;width:100%;font-size:31px;font-weight:400}
+.small .product-timer>div span.no{font-size:26px !important;font-weight:400}
+.product-timer>div span.text{float:none;display:inline-block;width:100%;text-align:center;text-transform:capitalize}
+.modal-popup .modal-inner-wrap {margin:0 auto !important}
+
+@media (max-width: 419px) {
+    .product-timer>div{font-size:14px;}
+    .product-timer>div span.no{font-size:22px;}
+}
+
+@media (max-width: 530px) {
+    .product-timer>div{width:23%;font-size:18px;}
+    .product-timer>div span.no{font-size:28px;}
+}
+
+@media (max-width: 767px) {
+    .modal-popup.modal-slide._show .modal-inner-wrap[class] {
+        margin:50px auto !important;
+    }
+}
+
+@media (max-width: 991px) {
+    .mb-time-countdown-container{margin-top: 15px;}
+}

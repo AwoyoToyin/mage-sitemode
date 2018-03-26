@@ -1,0 +1,15 @@
+<?php
+/**
+ * SiteMode Template edit form main tab
+ *
+ * @category   Hatmeige
+ * @package    Hatmeige_SiteMode
+ * @author     Hatmeige <hatmeige@gmail.com>
+ */
+?>
+<?php $_element = $this->getElement() ?>
+<?php if (!$_element->getNoDisplay()): ?>
+<tr>
+    <td colspan="3" class="value"><?php echo trim($_element->getElementHtml()) ?></td>
+</tr>
+<?php endif;

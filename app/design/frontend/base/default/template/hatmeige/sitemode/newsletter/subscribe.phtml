@@ -1,0 +1,28 @@
+<?php
+/**
+ * SiteMode Newsletter Form
+ *
+ * @category   Hatmeige
+ * @package    Hatmeige_SiteMode
+ * @author     Hatmeige <hatmeige@gmail.com>
+ */
+?>
+<div class="row subscribe">
+    <div class="col-sm-12">
+        <form class="form-inline" action="<?php echo $this->getFormActionUrl() ?>" method="post" id="newsletter-validate-detail">
+            <div class="col-sm-12">
+                <div class="col-sm-8">
+                    <input type="text" name="email" class="form-control" id="newsletter" placeholder="<?php echo Mage::helper('core')->quoteEscape($this->__('Subscribe to our newsletter')) ?>" class="input-text required-entry validate-email" />
+                </div>
+                <div class="col-sm-4">
+                    <button type="submit" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Subscribe')) ?>" class="btn btn-primary"><?php echo $this->__('Be the first to know') ?></button>
+                </div>
+            </div>
+        </form>
+        <script type="text/javascript">
+        //<![CDATA[
+            var newsletterSubscriberFormDetail = new VarienForm('newsletter-validate-detail');
+        //]]>
+        </script>
+    </div>
+</div>

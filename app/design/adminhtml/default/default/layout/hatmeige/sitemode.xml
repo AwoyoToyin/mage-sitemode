@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<layout version="0.1.0">
+    <!-- Enabled Wysiyg in system config -->
+    <adminhtml_system_config_edit>
+        <!-- Called handle Editor to add Js that wysiwyg need -->
+        <update handle="editor"/>
+        <reference name="head">
+            <action method="setCanLoadTinyMce"><load>1</load></action>
+       </reference>
+    </adminhtml_system_config_edit>
+    
+    <adminhtml_template_index>
+        <reference name="content">
+            <block type="sitemode/adminhtml_template" name="templates"></block>
+        </reference>
+    </adminhtml_template_index>
+
+    <adminhtml_template_new>
+        <update handle="adminhtml_template_edit" />
+    </adminhtml_template_new>
+
+    <adminhtml_template_edit>
+        <update handle="editor"/>
+        <reference name="content">
+            <block type="sitemode/adminhtml_template_edit" name="sitemode_template_edit"></block>
+        </reference>
+        <reference name="left">
+            <block type="sitemode/adminhtml_template_edit_tabs" name="sitemode_template_edit_tabs">
+                <block type="sitemode/adminhtml_template_edit_tab_main" name="sitemode_template_edit_tab_main" />
+                <block type="sitemode/adminhtml_template_edit_tab_content" name="sitemode_template_edit_tab_content" />
+                <action method="addTab"><name>main_section</name><block>sitemode_template_edit_tab_main</block></action>
+                <action method="addTab"><name>content_section</name><block>sitemode_template_edit_tab_content</block></action>
+            </block>
+        </reference>
+    </adminhtml_template_edit>
+</layout>

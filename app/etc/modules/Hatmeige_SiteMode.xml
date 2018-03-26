@@ -1,0 +1,8 @@
+<config>
+    <modules>
+        <Hatmeige_SiteMode>
+            <active>true</active>
+            <codePool>community</codePool>
+        </Hatmeige_SiteMode>
+    </modules>
+</config>

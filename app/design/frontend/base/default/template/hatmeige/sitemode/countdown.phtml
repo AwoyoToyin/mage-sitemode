@@ -1,0 +1,82 @@
+<?php
+/**
+ * SiteMode countdown template
+ *
+ * @category   Hatmeige
+ * @package    Hatmeige_SiteMode
+ * @author     Hatmeige <hatmeige@gmail.com>
+ */
+?>
+<?php
+/**
+ * Template for Hatmeige_SiteMode_Block_Countdown
+ */
+?>
+<?php
+$count = 1;
+$toDate = $this->getContent();
+?>
+<?php if ($toDate): ?>
+<div class="product_socials_wrapper_inner">
+    <div class='mb-time-countdown-container'>
+        <div id="countbox_<?php echo $count; ?>" class="product-timer"></div>
+    </div>
+</div>
+<?php endif; ?>
+<script>
+    document.observe("dom:loaded", function() {
+        var timer =1,
+        DisplayFormat = '<div class="day"><span class="no">%%D%%</span><span class="text">days</span></div><div class="hours"><span class="no">%%H%%</span><span class="text">hours</span></div><div class="min"><span class="no">%%M%%</span><span class="text">Min</span></div><div class="second"><span class="no">%%S%%</span><span class="text">Sec</span></div>',
+        CountActive = true,
+        FinishMessage = "",
+        CountStepper = -1,
+        LeadingZero = true,
+        ddiff;
+
+        CountStepper = Math.ceil(CountStepper);
+        if (CountStepper === 0)
+            CountActive = false;
+        var SetTimeOutPeriod = (Math.abs(CountStepper)-1)*1000 + 990;
+
+        var dthen<?php echo $count; ?> = new Date("<?php echo Date("m/d/y h:i:s A", strtotime($toDate)); ?>");
+            var start = "<?php echo Date("m/d/y h:i:s A", strtotime(Mage::getSingleton('core/date')->gmtDate())); ?>";
+            var startDate = Date.parse(start);
+            var dnow<?php echo $count; ?> = new Date(startDate);
+            if(CountStepper>0)
+              ddiff = new Date((dnow<?php echo $count; ?>)-(dthen<?php echo $count; ?>));
+            else
+              ddiff = new Date((dthen<?php echo $count; ?>)-(dnow<?php echo $count; ?>));
+
+            var gsecs<?php echo $count; ?> = Math.floor(ddiff.valueOf()/1000);
+            var iid<?php echo $count; ?> = "countbox_<?php echo $count; ?>";
+            CountBack(gsecs<?php echo $count; ?>,"countbox_"+timer, timer);
+            timer++;
+
+        function CountBack(secs,iid,timer) {
+            if (secs < 0) {
+                document.getElementById(iid).innerHTML = FinishMessage;
+                document.getElementById('caption'+timer).style.display = "none";
+                document.getElementById('heading'+timer).style.display = "none";
+                return;
+            }
+            var DisplayStr = DisplayFormat.replace(/%%D%%/g, calcage(secs,86400,100000));
+            DisplayStr = DisplayStr.replace(/%%H%%/g, calcage(secs,3600,24));
+            DisplayStr = DisplayStr.replace(/%%M%%/g, calcage(secs,60,60));
+            DisplayStr = DisplayStr.replace(/%%S%%/g, calcage(secs,1,60));
+            document.getElementById(iid).innerHTML = DisplayStr;
+
+            if (CountActive) {
+                setTimeout(function() {
+                    CountBack((secs+CountStepper),iid,timer);
+                }, SetTimeOutPeriod);
+            }
+        }
+
+        function calcage(secs, num1, num2) {
+            var s = ((Math.floor(secs/num1)%num2)).toString();
+            if (LeadingZero && s.length < 2)
+                s = "0" + s;
+            return "<b>" + s + "</b>";
+        }
+    });
+</script>

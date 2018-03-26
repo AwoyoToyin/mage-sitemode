@@ -1,0 +1,260 @@
+<config>
+    <tabs>
+        <hatmeige translate="label" module="sitemode">
+            <label>Hatmeige Extensions</label>
+            <sort_order>90</sort_order>
+        </hatmeige>
+    </tabs>
+    <sections>
+        <sitemode module="sitemode">
+            <class>separator-top</class>
+            <label>Site Mode</label>
+            <tab>hatmeige</tab>
+            <sort_order>10</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <extension_notice translate="label" module="sitemode">
+                    <frontend_model>sitemode/adminhtml_system_config_info</frontend_model>
+                    <sort_order>0</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                </extension_notice>
+                <general>
+                    <label>General</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <enabled translate="label comment">
+                            <label>Enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enabled>
+                        <mode translate="label comment" module="sitemode">
+                            <frontend_model>sitemode/adminhtml_system_config_mode</frontend_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <enabled>1</enabled>
+                            </depends>
+                        </mode>
+                        <current_mode translate="label comment" module="sitemode">
+                            <frontend_type>hidden</frontend_type>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <enabled>1</enabled>
+                            </depends>
+                        </current_mode>
+                        <allowedips translate="label comment">
+                            <label>Allowed IP addresses</label>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>
+                                <![CDATA[
+                                    One or more comma separated IP addresses allowed to view site in comming soon or maintenance mode.
+                                    example: 190.35.56.12,154.365.32.189
+                                ]]>
+                            </comment>
+                            <depends>
+                                <enabled>1</enabled>
+                            </depends>
+                        </allowedips>
+                    </fields>
+                </general>
+                <maintenance>
+                    <label>Maintenance Mode</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>20</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <launchdate translate="label comment">
+                            <label>Launching Date</label>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>sitemode/adminhtml_system_config_date</frontend_model>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Date the site should be put on live mode]]></comment>
+                        </launchdate>
+                        <launchtime translate="label comment">
+                            <label>Launching Time</label>
+                            <frontend_type>time</frontend_type>
+                            <sort_order>7</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[The time of the day the site should be put on live mode.]]></comment>
+                       </launchtime>
+                        <template translate="label comment">
+                            <label>Page Layout</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>sitemode/system_config_template</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[The layout the used for maintenance mode.]]></comment>
+                        </template>
+                        <showtimer translate="label comment">
+                            <label>Display Countdown Timer</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Should countdown timer be displayed? This makes use of the launch date & time.]]></comment>
+                        </showtimer>
+                        <showsubscribe translate="label comment">
+                            <label>Display Subscribe Form</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Should customers be allowed to subscribe to newsletter?]]></comment>
+                        </showsubscribe>
+                        <showsocial translate="label comment">
+                            <label>Display Social Share Buttons</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>
+                                <![CDATA[Should customers be shown the social links? Makes use of the links entered in the 'Social' group below.]]>
+                            </comment>
+                        </showsocial>
+                    </fields>
+                </maintenance>
+                <coming>
+                    <label>Coming Soon Mode</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>30</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <launchdate translate="label comment">
+                            <label>Launching Date</label>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>sitemode/adminhtml_system_config_date</frontend_model>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Date the site should be put on live mode]]></comment>
+                        </launchdate>
+                        <launchtime translate="label comment">
+                            <label>Launching Time</label>
+                            <frontend_type>time</frontend_type>
+                            <sort_order>7</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[The time of the day the site should be put on live mode.]]></comment>
+                       </launchtime>
+                        <template translate="label comment">
+                            <label>Page Layout</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>sitemode/system_config_template</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[The layout the used for coming soon mode.]]></comment>
+                        </template>
+                        <showtimer translate="label comment">
+                            <label>Display Countdown Timer</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Should countdown timer be displayed? This makes use of the launch date & time.]]></comment>
+                        </showtimer>
+                        <showsubscribe translate="label comment">
+                            <label>Display Subscribe Form</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Should customers be allowed to subscribe to newsletter?]]></comment>
+                        </showsubscribe>
+                        <showsocial translate="label comment">
+                            <label>Display Social Share Buttons</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>
+                                <![CDATA[Should customers be shown the social links? Makes use of the links entered in the 'Social' group below.]]>
+                            </comment>
+                        </showsocial>
+                    </fields>
+                </coming>
+                <social>
+                    <label>Social Links</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>40</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <facebook translate="label comment">
+                            <label>Facebook Page</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </facebook>
+                        <twitter translate="label comment">
+                            <label>Twitter Page</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </twitter>
+                        <instagram translate="label comment">
+                            <label>Instagram Page</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </instagram>
+                    </fields>
+                </social>
+            </groups>
+        </sitemode>
+    </sections>
+ </config>

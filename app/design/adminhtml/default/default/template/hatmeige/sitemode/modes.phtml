@@ -1,0 +1,145 @@
+<!--<h2>Current Mode is: <?php // echo Mage::helper('sitemode')->getCurrentMode(); ?></h2>-->
+<style>
+    .main_wrapper {
+        padding-top: 35px;
+    }
+    ul.list {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    ul.list > li {
+        float: left;
+        margin-right: 20px;
+    }
+    .item_wrapper {
+        width: 200px;
+        height: 250px;
+        margin-bottom: 30px;
+        text-align: center;
+        position: relative;
+    }
+    .item {
+        width: 100%;
+        padding: 30px 0;
+        border: 2px solid grey;
+    }
+    .item.active {
+        border: 2px solid green;
+    }
+    .mode_img {
+        width: 85px;
+        height: 85px;
+    }
+    .label {
+        font-weight: lighter;
+    }
+    .label.active {
+        font-weight: bold;
+    }
+    .enabled {
+        background-color: green !important;
+    }
+    
+    /** Buttons */
+    .mode_btn {
+        margin-top: 13px;
+        height: 35px;
+        width: 100px;
+        border-width: 0;
+        border-color: transparent;
+        background: #989898;
+    }
+    .activate, .activate:hover {
+        background-color: #989898;
+    }
+    .activate:hover {
+        background: green;
+    }
+</style>
+<div class="main_wrapper">
+    <ul class="list">
+        <li>
+            <div class="item_wrapper">
+                <div class="item" id="live">
+                    <img src="<?php echo $this->getSkinUrl('hatmeige/sitemode/images/live.png');?>" class="mode_img"/>
+                    <h4 class="label" id="live_label">We're Live</h4>
+                </div>
+                <button type="button" class="mode_btn activate" id="live_btn" onclick="setMode('live');">Activate</button>
+            </div>
+        </li>
+        <li>
+            <div class="item_wrapper">
+                <div class="item" id="coming">
+                    <img src="<?php echo $this->getSkinUrl('hatmeige/sitemode/images/coming-soon.png');?>" class="mode_img"/>
+                    <h4 class="label" id="coming_label">Coming Soon</h4>
+                </div>
+                <button type="button" class="mode_btn activate" id="coming_btn" onclick="setMode('coming');">Activate</button>
+            </div>
+        </li>
+        <li>
+            <div class="item_wrapper">
+                <div class="item" id="maintenance">
+                    <img src="<?php echo $this->getSkinUrl('hatmeige/sitemode/images/maintenance.jpg');?>" class="mode_img"/>
+                    <h4 class="label" id="maintenance_label">Under Repair</h4>
+                </div>
+                <button type="button" class="mode_btn activate" id="maintenance_btn" onclick="setMode('maintenance');">Activate</button>
+            </div>
+        </li>
+    </ul>
+</div>
+<script>
+    document.observe("dom:loaded", function() {
+        var current = '<?php echo Mage::helper('sitemode')->getCurrentMode(); ?>';
+        if (current) {
+            setSelected(current);
+        }
+    });
+    
+    function setMode(mode) {
+        var current = $('sitemode_general_current_mode').getValue();
+        if (mode !== current) {
+            unsetPrev(current);
+            setSelected(mode);
+        }
+    }
+    
+    /**
+     * Handles Unsetting Previous Current Mode
+     * @param string current
+     * @return void
+     */
+    function unsetPrev(current) {
+        let enabled = current + '_enabled';
+        let label = current + '_label';
+        let btn = current + '_btn';
+        $(current).removeClassName('active');
+        $(label).removeClassName('active');
+        
+        // handling button
+        $(btn).removeClassName('enabled');
+        $(btn).update('Activate');
+        // handling button
+    }
+    
+    /**
+     * Handles Setting Current Mode
+     * @param string selected
+     * @return void
+     */
+    function setSelected(selected) {
+        let enabled = selected + '_enabled';
+        let label = selected + '_label';
+        let btn = selected + '_btn';
+        $(selected).addClassName('active');
+        $(label).addClassName('active');
+        
+        // handling button
+        $(btn).addClassName('enabled');
+        $(btn).update('Current');
+        // handling button
+        
+        // set the value of the current mode
+        $('sitemode_general_current_mode').setValue(selected);
+    }
+</script>

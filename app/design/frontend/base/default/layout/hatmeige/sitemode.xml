@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * SiteMode layout
+ *
+ * @category   Hatmeige
+ * @package    Hatmeige_SiteMode
+ * @author     Hatmeige <hatmeige@gmail.com>
+ */
+-->
+<layout version="0.1.0">
+    <sitemode_index_index>
+        <reference name="root">
+            <action method="setTemplate">
+                <template>hatmeige/page.phtml</template>
+            </action>
+        </reference>
+        <reference name="head">
+            <action method="addCss">
+                <stylesheet>hatmeige/bootstrap/css/bootstrap.min.css</stylesheet>
+            </action>
+            <action method="addCss">
+                <stylesheet>hatmeige/bootstrap/css/bootstrap-theme.min.css</stylesheet>
+            </action>
+            <action method="addCss">
+                <stylesheet>hatmeige/fontawesome/css/fontawesome-all.min.css</stylesheet>
+            </action>
+            <action method="addCss">
+                <stylesheet>hatmeige/css/sitemode/general.css</stylesheet>
+            </action>
+            <action method="addCss">
+                <stylesheet>hatmeige/css/sitemode/countdown.css</stylesheet>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="sitemode/offline" name="sitemode_offline" template="hatmeige/sitemode/offline.phtml">
+                <block type="core/template" name="countdown" template="hatmeige/sitemode/countdown.phtml"/>
+                <block type="newsletter/subscribe" name="subscribe" template="hatmeige/sitemode/newsletter/subscribe.phtml"/>
+                <block type="sitemode/social" name="social" template="hatmeige/sitemode/social.phtml"/>
+            </block>
+        </reference>
+    </sitemode_index_index>
+</layout>

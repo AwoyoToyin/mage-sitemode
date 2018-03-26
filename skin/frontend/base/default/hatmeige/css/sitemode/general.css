@@ -1,0 +1,29 @@
+.mb-2x{margin-bottom:30px;}
+.wrapper {text-align:center;padding-top:100px !important;}
+.page-title h1 {font-size:30px !important;border-bottom:none !important;color: #000000 !important;}
+p {color: #000000 !important;margin-bottom: 10px;}
+@media (max-width: 768px) {
+    .page-title h1 {font-size:24px !important;}
+}
+@media (min-width: 1200px) {
+    .wrapper {padding-top:120px !important;}
+}
+
+/** Newsletter */
+.subscribe{margin:25px 0;}
+input[type=email], input[type=search], input[type=number], input[type=password], input[type=tel], input[type=text] {
+    height:inherit !important;
+    padding: 6px 12px !important;
+}
+.form-inline .form-control {width:100% !important;}
+@media (max-width: 767px) {
+    .btn {margin-top:20px !important;}
+}
+
+/** Social */
+span.icon {margin: 0 10px;}
+.facebook{color:#3b5bdb;}
+.facebook:hover{color:#4c6ef5;}
+
+.instagram{color:#e8590c;}
+.instagram:hover{color:#fd7e14;}
