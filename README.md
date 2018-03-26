@@ -11,6 +11,17 @@ To customize the default templates or add new ones, goto:
 
 Note: The templates can be scoped to a particular store view.
 
+## Template Variables
+```
+{{var countdown}} : The countdown timer
+
+{{var social}} : The social links
+
+{{var subscribe}} : Newsletter subscription form
+```
+You play around by moving around the template variables to see how the view is affected
+
+
 ## Configuration & Setup
 By default, this module ships with the storefronts on live mode so you don't get undesired results.
 To put your storefronts in either maintenance or coming soon mode, goto: `Hatmeige -> Site Mode -> Settings` and you should be greeted with a view like this:
