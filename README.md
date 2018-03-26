@@ -6,6 +6,9 @@ Running multiple storefronts on your magento installation? This module takes tha
 This module by default, ships with two (2) different maintenance mode and one (1) coming soon mode customizable templates.
 Ofcourse, you could choose to create may more as you see fit.
 
+To customize the default templates or add new ones, goto:
+`Hatmeige -> Site Mode -> Template`
+
 Note: The templates can be scoped to a particular store view.
 
 ## Configuration & Setup
