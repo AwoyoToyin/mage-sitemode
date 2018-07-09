@@ -59,7 +59,7 @@ class Hatmeige_SiteMode_Block_Offline extends Mage_Core_Block_Template
         return $content;
     }
 
-        /**
+    /**
      * Determine which template to use
      */
     protected function _getType()
